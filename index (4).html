@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Мой хаб из TikTok</title>
+  <meta name="description" content="Лендинг из TikTok: ссылки на Telegram, соцсети, предложения и раздел игр." />
+  <meta property="og:title" content="Мой хаб из TikTok" />
+  <meta property="og:description" content="Ссылки, предложения и игры — всё в одном месте." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#111827" />
+  <style>
+    :root{
+      --bg:#0b0f16;
+      --panel:#121826;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --brand:#3b82f6;
+      --brand-2:#a78bfa;
+      --ok:#10b981;
+      --warn:#f59e0b;
+      --radius:18px;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.15), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 20%, rgba(167,139,250,.16), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:960px;margin-inline:auto;padding:28px}
+    .hero{
+      display:grid;
+      grid-template-columns:80px 1fr auto;
+      gap:16px;
+      align-items:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:calc(var(--radius) + 6px);
+      padding:18px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(600px 120px at -10% 0%, rgba(59,130,246,.12), transparent 60%);
+      pointer-events:none;
+    }
+    .avatar{
+      width:80px;height:80px;border-radius:50%;
+      background:#1f2937 url('avatar.jpg') center/cover no-repeat;
+      border:2px solid rgba(255,255,255,.12);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    .title h1{margin:0;font-size:28px}
+    .title p{margin:4px 0 0;color:var(--muted)}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:14px;border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      backdrop-filter:saturate(1.2) blur(4px);
+      transition:transform .15s ease, border-color .15s ease;
+      font-weight:600;
+    }
+    .btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.2)}
+    .btn.primary{background:linear-gradient(180deg, var(--brand), var(--brand-2));border:0}
+    .section{margin-top:26px}
+    .section h2{font-size:20px;margin:0 0 14px;color:#f3f4f6}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(2,1fr);}
+    @media (max-width:720px){
+      .hero{grid-template-columns:64px 1fr;grid-auto-rows:min-content}
+      .cta{grid-column:1/-1;justify-content:flex-start}
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      padding:16px;box-shadow:var(--shadow);
+    }
+    .card .card-h{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-weight:700}
+    .muted{color:var(--muted)}
+    .links{display:grid;gap:12px}
+    .link-item{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:14px 16px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.06);
+    }
+    .link-item b{font-weight:700}
+    .link-item small{color:var(--muted)}
+    .tiktok-embed-wrap{
+      background:var(--panel);border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);padding:8px;box-shadow:var(--shadow);
+    }
+    .game{
+      display:flex;gap:12px;align-items:center;
+      padding:12px;border-radius:14px;background:#0f1420;border:1px solid rgba(255,255,255,.06);
+    }
+    .game img{width:64px;height:64px;border-radius:12px;object-fit:cover}
+    .game a{margin-left:auto}
+    footer{margin:28px 0;color:var(--muted);text-align:center;font-size:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="avatar" aria-label="Аватар"></div>
+      <div class="title">
+        <h1>@ваш_ник • TikTok</h1>
+        <p>Коротко обо мне: блог, проекты, игры и Telegram — всё здесь.</p>
+      </div>
+      <nav class="cta">
+        <a class="btn primary" href="https://www.tiktok.com/@ВАШ_НИК" target="_blank" rel="noopener">Открыть TikTok</a>
+        <a class="btn" href="https://t.me/ВАШ_КАНАЛ" target="_blank" rel="noopener">Перейти в Telegram</a>
+      </nav>
+    </header>
+    <section class="section">
+      <h2>Мои ссылки</h2>
+      <div class="links">
+        <a class="link-item" href="https://www.tiktok.com/@ВАШ_НИК" target="_blank" rel="noopener">
+          <div><b>TikTok профиль</b><div class="muted">Видео, прямые эфиры</div></div>
+          <small>tiktok.com/@ВАШ_НИК</small>
+        </a>
+        <a class="link-item" href="https://t.me/ВАШ_КАНАЛ" target="_blank" rel="noopener">
+          <div><b>Telegram-канал</b><div class="muted">Анонсы, опросы, закулисье</div></div>
+          <small>t.me/ВАШ_КАНАЛ</small>
+        </a>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Последнее видео</h2>
+      <div class="tiktok-embed-wrap">
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tiktok/video/7253684835747562753" data-video-id="7253684835747562753" style="max-width: 605px;min-width: 325px; margin:auto;">
+          <section>Здесь отображается встроенное видео TikTok</section>
+        </blockquote>
+        <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+    </section>
+    <section id="offers" class="section">
+      <h2>Предложения</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-h">🤝 Сотрудничество</div>
+          <p class="muted">Интеграции, нативная реклама, упоминания в роликах.</p>
+        </article>
+        <article class="card">
+          <div class="card-h">🎁 Донат</div>
+          <p class="muted">Поддержи контент — я скажу спасибо в новом видео.</p>
+        </article>
+      </div>
+    </section>
+    <section class="section">
+      <h2>Популярные игры</h2>
+      <div class="grid">
+        <div class="game">
+          <img src="game1.jpg" alt="Игра 1" />
+          <div><b>Игра 1</b><div class="muted">Описание</div></div>
+          <a class="btn" href="/games/game1.html">Играть</a>
+        </div>
+      </div>
+    </section>
+    <footer>© Твоё имя</footer>
+  </div>
+</body>
+</html>
